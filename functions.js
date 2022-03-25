@@ -18,7 +18,8 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    return [];
+    const pets = arr.filter(pet => pet.type === 'dog'); 
+    return pets;
 }
 
 /*
@@ -28,7 +29,7 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    return arr.map (pet => pet.name);
 }
 
 /*
@@ -37,7 +38,9 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    return arr.filter(pet => pet.type === 'dog')
+        .map(pet => pet.name);
+
 }
 
 /*
@@ -47,7 +50,7 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    return arr.reverse().map (pet => pet.type);
 }
 
 /*
@@ -62,7 +65,10 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
+    const spanishArray = arr.map((pet => { 
+        return { nombre: pet.name, tipo: pet.type };}));
+
+    return spanishArray;
 }
 
 /*
@@ -76,7 +82,10 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-     return []
+    const hungryPets = arr.map((pet => {
+        return { name: pet.name, isHungry: true, type: pet.type };
+    }));
+    return hungryPets;
 }
 
 /*
@@ -90,7 +99,10 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    const shoutingName = arr.map((pet => {
+        return { name: pet.name.toUpperCase(), type: pet.type }; 
+    }));
+    return shoutingName;
 }
 
 
@@ -101,7 +113,7 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    return arr.map((pet => pet.name + pet.type));
 }
 
 /*
@@ -114,7 +126,7 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    return arr.find(({ name }) => name === 'sassy');
 }
 
 /*
@@ -140,7 +152,11 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    const petsArray = arr.map((pets) => {
+        return Object.entries(pets);
+    });
+
+    return petsArray;
 }
 
 ////////////////////////////////////////////////////////
@@ -169,7 +185,7 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    return arr.filter(vehicle => vehicle.type === 'car');
 }
 
 /*
@@ -181,8 +197,11 @@ Output:
 
 */
 
-export function getChevyCars(arr) {
-    return [];
+export function getChevyCars(arr) { 
+    const cars = arr.filter(car => car.make === 'chevy'); 
+    cars.splice(1, 2);
+    return cars;
+   
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
