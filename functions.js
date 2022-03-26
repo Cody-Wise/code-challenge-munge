@@ -269,6 +269,6 @@ Output:
 export function makeKeysString(arr) {
     const keys2 = Object.keys(arr[0]);
 
-    console.log(keys2.toString().replace(/,/g, ''));
+    return keys2.toString().replace(/,/g, '');
     
 }
