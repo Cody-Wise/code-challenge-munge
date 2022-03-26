@@ -218,7 +218,12 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    return '';
+    const carModels = arr.reduce((total, item) =>{
+        return total + item.model; 
+    }, '');
+
+    return carModels;
+    
 }
 
 /*
@@ -228,7 +233,11 @@ Output: 14
  */
 
 export function getSumOfAges(arr) {
-    return 0;
+    const ages = arr.reduce((total, item)=>{
+        return total + item.age;
+
+    }, 0);
+    return ages;
 }
 
 /*
@@ -242,7 +251,10 @@ Output:
  */
 
 export function makeCountObject(arr) {
-    return {};
+
+    const count = arr
+        .map(car => car.type);
+    return count;
 }
 
 
@@ -255,5 +267,8 @@ Output:
 
 
 export function makeKeysString(arr) {
-    return '';
+    const keys2 = Object.keys(arr[0]);
+
+    return keys2.toString();
+    
 }
